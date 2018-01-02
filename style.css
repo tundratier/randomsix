@@ -36,6 +36,7 @@ main > .btn-choose-side {
 
 main > #selection {
 	position: relative;
+	overflow: hidden;
 	height: 70vh;
 }
 

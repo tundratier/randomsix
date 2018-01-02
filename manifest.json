@@ -28,7 +28,8 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "index.html",
   "display": "standalone",
-  "theme_color": "#263238"
+  "theme_color": "#2196F3",
+  "background_color": "#263238",
+  "orientation": "portrait"
 }

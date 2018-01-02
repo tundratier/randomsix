@@ -1,3 +1,27 @@
+.inverse-shadow {
+	box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide-from-top {
+	from {
+		top: -100%;
+	}
+
+	to {
+		top: 0;
+	}
+}
+
+@keyframes slide-from-bottom {
+	from {
+		top: 100%;
+	}
+
+	to {
+		top: 0;
+	}
+}
+
 main {
 	height: 100vh;
 }
@@ -11,13 +35,41 @@ main > .btn-choose-side {
 }
 
 main > #selection {
+	position: relative;
 	height: 70vh;
+}
+
+#selection > .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(255, 255, 255, .5);
+
+	opacity: 1;
+	transform: scale(1.0);
+	transition-property: opacity, transform;
+	transition-duration: 250ms;
+	transition-timing-function: linear;
+
+	animation-duration: 250ms;
+	animation-timing-function: ease-out;
+}
+
+#selection > .slide.removed {
+	transform: scale(.5);
+	opacity: 0;
+}
+
+#selection > .slide.attacker {
+	animation-name: slide-from-top;
+}
+
+#selection > .slide.defender {
+	animation-name: slide-from-bottom;
 }
 
 footer {
 	padding: 16px 8px;
-}
-
-.inverse-shadow {
-	box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.3);
 }

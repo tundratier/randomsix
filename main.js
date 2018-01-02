@@ -76,6 +76,9 @@
 		let pool = operators[side];
 		let operator = pool[Math.floor(Math.random() * pool.length)];
 		slide.innerHTML = operator[ICON];
+		let name = document.createElement("span");
+		name.innerText = operator[NAME];
+		slide.appendChild(name);
 	}
 
 	function removeCurrentSlide() {
@@ -86,7 +89,7 @@
 	function chooseOperator(event) {
 		let side = event.currentTarget.getAttribute("data-side");
 		let slide = createSlide(side);
-		let operator = fillOperator(side, slide);
+		fillOperator(side, slide);
 		removeCurrentSlide();
 		slideContainer.appendChild(slide);
 	}

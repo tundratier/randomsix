@@ -3,46 +3,60 @@
 	const slideContainer = document.getElementById("selection");
 	const operators = {
 		attacker: [
-			"Ash",
-			"Blackbeard",
-			"Blitz",
-			"Buck",
-			"Capitao",
-			"Dokkaebi",
-			"Fuze",
-			"Glaz",
-			"Hibana",
-			"IQ",
-			"Jackal",
-			"Montagne",
-			"Sledge",
-			"Thatcher",
-			"Thermite",
-			"Twitch",
-			"Ying",
-			"Zofia",
+			["ash"],
+			["blackbeard"],
+			["blitz"],
+			["buck"],
+			["capitao"],
+			["dokkaebi"],
+			["fuze"],
+			["glaz"],
+			["hibana"],
+			["iq"],
+			["jackal"],
+			["montagne"],
+			["sledge"],
+			["thatcher"],
+			["thermite"],
+			["twitch"],
+			["ying"],
+			["zofia"],
 		],
 		defender: [
-			"Bandit",
-			"Castle",
-			"Caveira",
-			"Doc",
-			"Echo",
-			"Ela",
-			"Frost",
-			"Jager",
-			"Kapkan",
-			"Lesion",
-			"Mira",
-			"Mute",
-			"Pulse",
-			"Rook",
-			"Smoke",
-			"Tachanka",
-			"Valkyrie",
-			"Vigil",
+			["bandit"],
+			["castle"],
+			["caveira"],
+			["doc"],
+			["echo"],
+			["ela"],
+			["frost"],
+			["jager"],
+			["kapkan"],
+			["lesion"],
+			["mira"],
+			["mute"],
+			["pulse"],
+			["rook"],
+			["smoke"],
+			["tachanka"],
+			["valkyrie"],
+			["vigil"],
 		]
 	};
+	const NAME = 0;
+	const ICON = 1;
+
+	function loadOperatorIcons() {
+		return Promise.all(
+			Object.entries(operators)
+			      .reduce((names, [side, ops]) => names.concat(ops.map((op, idx) => [side, op[NAME], idx])), [])
+			      .map(([side, name, idx]) => {
+				      return fetch(`/icons/${name}.svg`)
+					      .then(response => response.text())
+					      .then(svg => operators[side][idx].push(svg));
+			      })
+		);
+	}
 
 	function removeEventTarget(event) {
 		let target = event.currentTarget;
@@ -62,7 +76,7 @@
 		let pool = operators[side];
 		let operator = pool[Math.floor(Math.random() * pool.length)];
 		let el = document.createElement("div");
-		el.innerText = operator;
+		el.innerHTML = operator[ICON];
 		el.classList.add("operator");
 		return el;
 	}
@@ -81,7 +95,11 @@
 		slideContainer.appendChild(slide);
 	}
 
-	document.querySelectorAll(".btn-choose-side")
-	        .forEach(el => el.addEventListener("click", chooseOperator, false));
+	function init() {
+		document.querySelectorAll(".btn-choose-side")
+		        .forEach(el => el.addEventListener("click", chooseOperator, false));
+	}
 
+	loadOperatorIcons()
+		.then(init);
 })();

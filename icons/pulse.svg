@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M0,8.906h493.435v75.771c0,0,8.255,4.733,19.261,11.247
+		c0,0,0.917,42.346-18.803,93.068v314.104H0V8.906z"/>
+	<polygon stroke="#000000" stroke-miterlimit="10" points="473.259,482.154 20.177,482.154 20.177,28.916 473.259,28.916 
+		473.259,85.687 495.757,108.313 473.259,219.704 	"/>
+	<path fill="#CF5E33" d="M39.438,48.924v201.492c0,0,155.001-169.849,277.9-201.492H39.438z"/>
+	<path fill="#CF5E33" d="M39.438,364.425v98.185h414.559V279.732C453.997,279.732,347.147,526.361,39.438,364.425z"/>
+	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M503.523,142.221C404.676,610.324,7.337,349.533,7.337,349.533
+		v-47.93c0,0,233.877-244.302,370.077-243.837c0,0,80.37-1.394,113.267,28.387L503.523,142.221z"/>
+	<path stroke="#000000" stroke-miterlimit="10" d="M20.177,339.199c431.526,238.719,470.503-228.385,470.503-228.385
+		C416.39,64.281,329.722,94.063,329.722,94.063c87.131,55.375,78.875,141.463,78.875,141.463
+		c-11.463,156.818-159.587,160.542-159.587,160.542C104.097,388.156,93.551,256,93.551,256
+		c-36.228,21.871-73.374,67.083-73.374,67.083V339.199z"/>
+	<path fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M261.85,115.695
+		C369.437,134.153,365.006,235.9,365.006,235.9c-0.404,112.557-115.353,113.9-115.353,113.9
+		c-107.61-1.715-114.466-113.9-114.466-113.9s-0.444-14.857,0-18.009"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="112.115" y1="235.9" x2="176.003" y2="235.9"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="324.189" y1="235.9" x2="408.597" y2="235.525"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="249.009" y1="396.067" x2="250.01" y2="310.635"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="249.51" y1="160.716" x2="250.01" y2="122.898"/>
+	
+		<ellipse fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" cx="250.097" cy="235.675" rx="74.094" ry="74.96"/>
+	
+		<ellipse fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="250.318" cy="235.524" rx="30.391" ry="30.747"/>
+	<path stroke="#000000" stroke-miterlimit="10" d="M250.317,235.524l59.675,126.884c0,0,46.585-12.607,74.979-85.989
+		L250.317,235.524z"/>
+	<ellipse stroke="#000000" stroke-miterlimit="10" cx="184.52" cy="270.449" rx="14.284" ry="14.447"/>
+	<path stroke="#000000" stroke-miterlimit="10" d="M231.549,344.938c0,7.982-6.396,14.448-14.285,14.448
+		c-7.888,0-14.284-6.466-14.284-14.448c0-7.979,6.396-14.447,14.284-14.447C225.153,330.49,231.549,336.959,231.549,344.938z"/>
+	<ellipse stroke="#000000" stroke-miterlimit="10" cx="331.623" cy="149.671" rx="14.285" ry="14.447"/>
+	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M327.502,94.063C243.575,106.195,96.657,256,96.657,256v-17.848
+		l111.734-96.345l83.41-47.744H327.502z"/>
+</g>
+</svg>

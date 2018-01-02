@@ -46,7 +46,12 @@ main > #selection {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: rgba(255, 255, 255, .5);
+	padding: 10vmin;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	opacity: 1;
 	transform: scale(1.0);
@@ -69,6 +74,12 @@ main > #selection {
 
 #selection > .slide.defender {
 	animation-name: slide-from-bottom;
+}
+
+#selection > .slide > svg {
+	flex: 1 0 0;
+	width: 100%;
+	height: auto;
 }
 
 footer {

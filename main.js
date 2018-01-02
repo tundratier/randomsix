@@ -72,13 +72,10 @@
 		return slide;
 	}
 
-	function createOperator(side) {
+	function fillOperator(side, slide) {
 		let pool = operators[side];
 		let operator = pool[Math.floor(Math.random() * pool.length)];
-		let el = document.createElement("div");
-		el.innerHTML = operator[ICON];
-		el.classList.add("operator");
-		return el;
+		slide.innerHTML = operator[ICON];
 	}
 
 	function removeCurrentSlide() {
@@ -89,8 +86,7 @@
 	function chooseOperator(event) {
 		let side = event.currentTarget.getAttribute("data-side");
 		let slide = createSlide(side);
-		let operator = createOperator(side);
-		slide.appendChild(operator);
+		let operator = fillOperator(side, slide);
 		removeCurrentSlide();
 		slideContainer.appendChild(slide);
 	}

@@ -51,7 +51,7 @@
 			Object.entries(operators)
 			      .reduce((names, [side, ops]) => names.concat(ops.map((op, idx) => [side, op[NAME], idx])), [])
 			      .map(([side, name, idx]) => {
-				      return fetch(`/icons/${name}.svg`)
+				      return fetch(`icons/${name}.svg`)
 					      .then(response => response.text())
 					      .then(svg => operators[side][idx].push(svg));
 			      })

@@ -32,6 +32,8 @@ main > .btn-choose-side {
 	width: 100%;
 	border-radius: 0;
 	font-weight: 700;
+	font-size: 4.4vh;
+	letter-spacing: .1em;
 }
 
 main > #selection {

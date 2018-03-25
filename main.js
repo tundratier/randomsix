@@ -21,6 +21,8 @@
 			["twitch"],
 			["ying"],
 			["zofia"],
+			["lion"],
+			["finka"],
 		],
 		defender: [
 			["bandit"],

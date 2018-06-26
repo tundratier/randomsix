@@ -43,6 +43,8 @@
 			["tachanka"],
 			["valkyrie"],
 			["vigil"],
+			["alibi"],
+			["maestro"],
 		]
 	};
 	const NAME = 0;

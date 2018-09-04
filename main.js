@@ -23,6 +23,7 @@
 			["zofia"],
 			["lion"],
 			["finka"],
+			["maverick"],
 		],
 		defender: [
 			["bandit"],
@@ -45,6 +46,7 @@
 			["vigil"],
 			["alibi"],
 			["maestro"],
+			["clash"],
 		]
 	};
 	const NAME = 0;

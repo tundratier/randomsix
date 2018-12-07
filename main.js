@@ -24,6 +24,7 @@
 			["lion"],
 			["finka"],
 			["maverick"],
+			["nomad"],
 		],
 		defender: [
 			["bandit"],
@@ -47,6 +48,7 @@
 			["alibi"],
 			["maestro"],
 			["clash"],
+			["kaid"],
 		]
 	};
 	const NAME = 0;

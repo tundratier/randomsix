@@ -1,0 +1,26 @@
+{
+  "name": "randomsix",
+  "version": "1.0.0",
+  "description": "Random operator selection for Rainbow Six Siege (TM) by Ubisoft",
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tundratier/randomsix.git"
+  },
+  "author": "Tundratier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tundratier/randomsix/issues"
+  },
+  "homepage": "https://github.com/tundratier/randomsix#readme",
+  "dependencies": {
+    "preact": "^8.4.2",
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}

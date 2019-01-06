@@ -1,5 +1,9 @@
 import {Operator, Side} from "./types";
 
+function getIconPath(name: string) {
+	return `icons/${name.toLowerCase()}.svg`;
+}
+
 export const ATTACKERS: Array<Operator> = [
 	"Ash",
 	"Blackbeard",
@@ -23,7 +27,7 @@ export const ATTACKERS: Array<Operator> = [
 	"Finka",
 	"Maverick",
 	"Nomad",
-].map(name => new Operator(Side.ATTACKER, name, name.toLowerCase()));
+].map(name => new Operator(Side.ATTACKER, name, getIconPath(name)));
 
 export const DEFENDERS: Array<Operator> = [
 	"Bandit",
@@ -48,4 +52,4 @@ export const DEFENDERS: Array<Operator> = [
 	"Maestro",
 	"Clash",
 	"Kaid",
-].map(name => new Operator(Side.DEFENDER, name, name.toLowerCase()));
+].map(name => new Operator(Side.DEFENDER, name, getIconPath(name)));

@@ -7,6 +7,8 @@ interface State {
 interface Props {
 	onCheckedChange: (checked: boolean) => void;
 	checked: boolean;
+	checkedClass?: string;
+	uncheckedClass?: string;
 }
 
 export class Toggle extends Component<Props, State> {
@@ -27,7 +29,7 @@ export class Toggle extends Component<Props, State> {
 	render() {
 		return <button
 			type="button"
-			class={this.state.checked ? "checked" : "unchecked"}
+			class={this.state.checked ? (this.props.checkedClass || "checked") : (this.props.uncheckedClass || "unchecked")}
 			onClick={this.onClick.bind(this)}>
 			{this.props.children}
 		</button>;

@@ -1,25 +1,7 @@
-import {Component, h} from "preact";
+import {h} from "preact";
 import {Operator} from "../../ops/types";
+import style from "./icon.mod.scss"
 
-export class OperatorIcon extends Component<{ op: Operator }, { icon: string }> {
-
-	constructor(props: { op: Operator }, context: any) {
-		super(props, context);
-		this.loadIcon();
-	}
-
-	private loadIcon() {
-		fetch(this.props.op.icon)
-			.then(response => response.text())
-			.then(svg => this.setState({icon: svg}));
-	}
-
-	render() {
-		let {icon} = this.state;
-		if (icon) {
-			return <div>${icon}</div>;
-		} else {
-			return <div/>;
-		}
-	}
+export function OperatorIcon(props: {op: Operator}) {
+	return <img class={style.OperatorIcon} alt={props.op.name} src={props.op.icon}/>
 }

@@ -1,0 +1,16 @@
+@import "../../globals";
+
+.OperatorBadge {
+
+	img {
+		width: 100%;
+	}
+
+	span {
+		text-align: center;
+		text-transform: uppercase;
+		color: $text;
+		font-size: 1em;
+	}
+
+}

@@ -2,7 +2,8 @@ import {Component, h} from "preact";
 import {Operator, Side} from "../../ops/types";
 import {getOperatorRoster, setOperatorActive} from "../../ops/roster";
 import {Toggle} from "../controls/toggle";
-import {OperatorName} from "../operator/name";
+import style from "./settings.mod.scss"
+import {OperatorIcon} from "../operator/icon";
 
 interface State {
 	roster: { op: Operator, active: boolean }[]
@@ -37,10 +38,10 @@ export class Settings extends Component<Props, State> {
 		let attackers = roster.filter(({op}) => op.side === Side.ATTACKER);
 		let defenders = roster.filter(({op}) => op.side === Side.DEFENDER);
 
-		return <div>{
+		return <div class={style.Settings}>{
 			[attackers, defenders].map(side => <div>{
-				side.map(({op, active}) => <Toggle onCheckedChange={(checked) => this.onRosterChanged(op, checked)} checked={active}>
-					<OperatorName op={op}/>
+				side.map(({op, active}) => <Toggle onCheckedChange={(checked) => this.onRosterChanged(op, checked)} checked={active} uncheckedClass={style.unchecked}>
+					<OperatorIcon op={op}/>
 				</Toggle>)
 			}</div>)
 		}</div>;

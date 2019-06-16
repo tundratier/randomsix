@@ -24,6 +24,19 @@ module.exports = {
 						transpileOnly: true,
 					},
 				}],
+			}, {   // SASS Modules
+				test: /\.mod\.scss$/,
+				exclude: /node_modules/,
+				use: [{
+					loader: "style-loader"
+				}, {
+					loader: "css-loader",
+					query: {
+						modules: true
+					}
+				}, {
+					loader: "sass-loader"
+				}]
 			}
 		],
 	},

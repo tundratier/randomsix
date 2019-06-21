@@ -1,9 +1,10 @@
 import {Component, h} from "preact";
 import {Operator, Side} from "../../ops/types";
-import {Link} from "preact-router";
 import {isOperatorActive} from "../../ops/roster";
 import {random} from "../../util/generators";
 import {OperatorCarousel} from "../operator/carousel";
+import {Toolbar} from "../controls/toolbar";
+import {Button, LinkButton} from "../controls/button";
 
 interface Props {
 	operators: Operator[]
@@ -38,11 +39,11 @@ export class Random extends Component<Props, State> {
 
 	render() {
 		return <div>
-			<header>
-				<button type="button" onClick={() => this.onSideClicked(Side.ATTACKER)}>ATK</button>
-				<Link path={"/"}>Home</Link>
-				<button type="button" onClick={() => this.onSideClicked(Side.DEFENDER)}>DEF</button>
-			</header>
+			<Toolbar>
+				<Button onClick={() => this.onSideClicked(Side.ATTACKER)} label={"ATK"} side={Side.ATTACKER}/>
+				<LinkButton path={"/"} label={"Home"}/>
+				<Button onClick={() => this.onSideClicked(Side.DEFENDER)} label={"DEF"} side={Side.DEFENDER}/>
+			</Toolbar>
 			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
 		</div>;
 	}

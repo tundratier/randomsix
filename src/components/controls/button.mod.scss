@@ -1,0 +1,36 @@
+@import "../../globals";
+
+@mixin buttonColor($color) {
+	background-color: $color;
+
+	&:hover {
+		background-color: adjust_color($color, $lightness: 10%);
+	}
+	&:active, &:focus {
+		background-color: adjust_color($color, $lightness: 20%);
+	}
+}
+
+.Button {
+	border: none;
+	outline: none;
+	transition: background-color 150ms linear;
+	text-transform: uppercase;
+	color: $text;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	font-size: 1.5em;
+	line-height: 2.0em;
+
+	@include buttonColor($control);
+
+	&.attacker {
+		@include buttonColor($attacker);
+	}
+
+	&.defender {
+		@include buttonColor($defender);
+	}
+}

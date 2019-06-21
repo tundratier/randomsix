@@ -1,0 +1,10 @@
+.Toolbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: stretch;
+	align-items: center;
+
+	> * {
+		flex: 0 1 100%;
+	}
+}

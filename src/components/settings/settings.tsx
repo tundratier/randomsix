@@ -5,8 +5,10 @@ import {Toggle} from "../controls/toggle";
 import style from "./settings.mod.scss"
 import {OperatorIcon} from "../operator/icon";
 
+type OperatorSelection = { op: Operator, active: boolean };
+
 interface State {
-	roster: { op: Operator, active: boolean }[]
+	roster: OperatorSelection[]
 }
 
 interface Props {
@@ -35,15 +37,25 @@ export class Settings extends Component<Props, State> {
 
 	render() {
 		let {roster} = this.state;
-		let attackers = roster.filter(({op}) => op.side === Side.ATTACKER);
-		let defenders = roster.filter(({op}) => op.side === Side.DEFENDER);
+		let side: { ops: OperatorSelection[], title: string; }[] = [];
+		side.push({
+			title: "Attackers",
+			ops: roster.filter(({op}) => op.side === Side.ATTACKER)
+		});
+		side.push({
+			title: "Defenders",
+			ops: roster.filter(({op}) => op.side === Side.DEFENDER)
+		});
 
 		return <div class={style.Settings}>{
-			[attackers, defenders].map(side => <div>{
-				side.map(({op, active}) => <Toggle onCheckedChange={(checked) => this.onRosterChanged(op, checked)} checked={active} uncheckedClass={style.unchecked}>
-					<OperatorIcon op={op}/>
-				</Toggle>)
-			}</div>)
+			side.map(({title, ops}) => <div>
+				<h2>{title}</h2>
+				{
+					ops.map(({op, active}) => <Toggle onCheckedChange={(checked) => this.onRosterChanged(op, checked)} checked={active} uncheckedClass={style.unchecked}>
+						<OperatorIcon op={op}/>
+					</Toggle>)
+				}
+			</div>)
 		}</div>;
 	}
 }

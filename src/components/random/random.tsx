@@ -3,6 +3,7 @@ import {Operator, Side} from "../../ops/types";
 import {Link} from "preact-router";
 import {isOperatorActive} from "../../ops/roster";
 import {random} from "../../util/generators";
+import {OperatorCarousel} from "../operator/carousel";
 
 interface Props {
 	operators: Operator[]
@@ -15,6 +16,7 @@ interface State {
 export class Random extends Component<Props, State> {
 
 	private readonly generators: Map<Side, Iterator<Operator>>;
+	private operatorCarousel?: OperatorCarousel;
 
 	constructor(props: Props, context: any) {
 		super(props, context);
@@ -31,7 +33,7 @@ export class Random extends Component<Props, State> {
 		if (!generator) {
 			return;
 		}
-		this.setState({operator: generator.next().value});
+		this.operatorCarousel && this.operatorCarousel.setNextOperator(generator.next().value);
 	}
 
 	render() {
@@ -41,7 +43,7 @@ export class Random extends Component<Props, State> {
 				<Link path={"/"}>Home</Link>
 				<button type="button" onClick={() => this.onSideClicked(Side.DEFENDER)}>DEF</button>
 			</header>
-			<div>{this.state.operator && this.state.operator.name}</div>
+			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
 		</div>;
 	}
 

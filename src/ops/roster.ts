@@ -20,3 +20,8 @@ export function getOperatorRoster(): { [name: string]: boolean } {
 export function setOperatorActive(operator: Operator, active: boolean): void {
 	window.localStorage.setItem(`${ROSTER_PREFIX}${operator.name}`, active ? OP_ACTIVE : OP_INACTIVE);
 }
+
+export function isOperatorActive(operator: Operator): boolean {
+	let setting = window.localStorage.getItem(`${ROSTER_PREFIX}${operator.name}`);
+	return setting === null || setting == OP_ACTIVE;
+}

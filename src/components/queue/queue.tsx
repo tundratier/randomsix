@@ -73,7 +73,7 @@ export class Queue extends Component<Props> {
 			</Toolbar>
 			<Toolbar>
 				<Button label={"RESET"} onClick={this.onResetClicked.bind(this)}/>
-				<Button label={"SKIP"} onClick={this.onSkipClicked.bind(this)}/>
+				<Button label={"DEFER"} onClick={this.onSkipClicked.bind(this)}/>
 			</Toolbar>
 			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
 		</div>;

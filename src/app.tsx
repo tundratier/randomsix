@@ -7,12 +7,14 @@ import {Operator} from "./ops/types";
 import style from "./app.mod.scss";
 import {Random} from "./components/random/random";
 import {Queue} from "./components/queue/queue";
+import {Home} from "./components/home/home";
 
 export function App() {
 	const operators: Operator[] = ATTACKERS.concat(DEFENDERS);
 
 	return <div class={style.app}>
 		<Router history={createHashHistory()}>
+			<Home path={"/"}/>
 			<Random path="/random" operators={operators}/>
 			<Queue path="/queue" operators={operators}/>
 			<Settings path="/settings" operators={operators}/>

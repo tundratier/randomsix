@@ -3,18 +3,15 @@
 @mixin buttonColor($color) {
 	background-color: $color;
 
-	&:hover {
-		background-color: adjust_color($color, $lightness: 10%);
-	}
-	&:active, &:focus {
-		background-color: adjust_color($color, $lightness: 20%);
+	&:active {
+		background-color: adjust_color($color, $lightness: 30%);
 	}
 }
 
 .Button {
 	border: none;
 	outline: none;
-	transition: background-color 150ms linear;
+	transition: background-color 100ms linear;
 	text-transform: uppercase;
 	color: $text;
 	text-align: center;
@@ -23,6 +20,7 @@
 	text-decoration: none;
 	font-size: 1.5em;
 	line-height: 2.0em;
+	-webkit-tap-highlight-color: transparent;
 
 	@include buttonColor($control);
 

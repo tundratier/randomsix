@@ -18,11 +18,13 @@ export class OperatorCarousel extends Component<{}, State> {
 		};
 	}
 
-	public setNextOperator(operator: Operator): void {
+	public setNextOperator(operator: Operator | null): void {
 		this.state.items.forEach(item => item.item && item.item.die());
-		this.setState({
-			items: this.state.items.concat({id: idCounter++, op: operator})
-		});
+		if (operator) {
+			this.setState({
+				items: this.state.items.concat({id: idCounter++, op: operator})
+			});
+		}
 	}
 
 	private onItemDeath(): void {

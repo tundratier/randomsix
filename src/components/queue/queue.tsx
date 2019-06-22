@@ -47,12 +47,17 @@ export class Queue extends Component<Props> {
 		}
 	}
 
-	private selectNextOperator(side: Side, skip: boolean = false) {
+	private selectNextOperator(side: Side, skip: boolean = false, recurse: boolean = false) {
 		let generator = this.generators.get(side)!;
 		let item = generator.next(skip ? PLAYLIST_SKIP : undefined);
 		if (item.done) {
 			this.resetQueue(side);
-			this.selectNextOperator(side, skip);
+			if (!recurse) {
+				this.selectNextOperator(side, skip, true);
+			} else {
+				delete this.currentOperator;
+				this.operatorCarousel!.setNextOperator(null);
+			}
 		} else {
 			this.currentOperator = item.value;
 			this.operatorCarousel!.setNextOperator(item.value);

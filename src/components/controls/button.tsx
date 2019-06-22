@@ -24,5 +24,5 @@ export function Button(props: Props) {
 }
 
 export function LinkButton(props: Props & LinkProps) {
-	return <Link path={props.path} class={className(props)} onClick={props.onClick}>{props.label}</Link>
+	return <Link path={props.path} class={className(props)} href={props.path} onClick={props.onClick}>{props.label}</Link>
 }

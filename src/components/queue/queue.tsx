@@ -7,6 +7,8 @@ import {playlist, PLAYLIST_SKIP} from "../../util/generators";
 import {OperatorCarousel} from "../operator/carousel";
 import {Icon} from "../icon/icon";
 import home from "../../icons/home.svg";
+import requeue from "../../icons/requeue.svg";
+import reset from "../../icons/reset.svg";
 
 interface Props {
 	operators: Operator[];
@@ -74,8 +76,8 @@ export class Queue extends Component<Props> {
 				<Button onClick={() => this.onSideClicked(Side.DEFENDER)} label={"DEF"} side={Side.DEFENDER}/>
 			</Toolbar>
 			<Toolbar>
-				<Button label={"RESET"} onClick={this.onResetClicked.bind(this)}/>
-				<Button label={"DEFER"} onClick={this.onSkipClicked.bind(this)}/>
+				<Button label={"RESET"} onClick={this.onResetClicked.bind(this)}><Icon icon={reset}/></Button>
+				<Button label={"DEFER"} onClick={this.onSkipClicked.bind(this)}><Icon icon={requeue}/></Button>
 			</Toolbar>
 			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
 		</div>;

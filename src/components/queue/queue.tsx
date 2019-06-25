@@ -9,6 +9,7 @@ import {Icon} from "../icon/icon";
 import home from "../../icons/home.svg";
 import requeue from "../../icons/requeue.svg";
 import reset from "../../icons/reset.svg";
+import {RemainingVerticalSpace} from "../layout/space";
 
 interface Props {
 	operators: Operator[];
@@ -79,7 +80,9 @@ export class Queue extends Component<Props> {
 				<Button label={"RESET"} onClick={this.onResetClicked.bind(this)}><Icon icon={reset}/></Button>
 				<Button label={"DEFER"} onClick={this.onSkipClicked.bind(this)}><Icon icon={requeue}/></Button>
 			</Toolbar>
-			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
+			<RemainingVerticalSpace>
+				<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
+			</RemainingVerticalSpace>
 		</div>;
 	}
 }

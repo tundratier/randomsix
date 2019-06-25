@@ -7,6 +7,7 @@ import {Toolbar} from "../controls/toolbar";
 import {Button, LinkButton} from "../controls/button";
 import {Icon} from "../icon/icon";
 import home from "../../icons/home.svg";
+import {RemainingVerticalSpace} from "../layout/space";
 
 interface Props {
 	operators: Operator[]
@@ -46,7 +47,9 @@ export class Random extends Component<Props, State> {
 				<LinkButton path={"/"}><Icon icon={home}/></LinkButton>
 				<Button onClick={() => this.onSideClicked(Side.DEFENDER)} label={"DEF"} side={Side.DEFENDER}/>
 			</Toolbar>
-			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
+			<RemainingVerticalSpace>
+				<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>
+			</RemainingVerticalSpace>
 		</div>;
 	}
 

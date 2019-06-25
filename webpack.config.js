@@ -37,6 +37,9 @@ module.exports = {
 				}, {
 					loader: "sass-loader"
 				}]
+			}, {	// SVG Files
+				test: /\.svg$/,
+				loader: 'svg-inline-loader'
 			}
 		],
 	},

@@ -5,6 +5,8 @@ import {random} from "../../util/generators";
 import {OperatorCarousel} from "../operator/carousel";
 import {Toolbar} from "../controls/toolbar";
 import {Button, LinkButton} from "../controls/button";
+import {Icon} from "../icon/icon";
+import home from "../../icons/home.svg";
 
 interface Props {
 	operators: Operator[]
@@ -41,7 +43,7 @@ export class Random extends Component<Props, State> {
 		return <div>
 			<Toolbar>
 				<Button onClick={() => this.onSideClicked(Side.ATTACKER)} label={"ATK"} side={Side.ATTACKER}/>
-				<LinkButton path={"/"} label={"Home"}/>
+				<LinkButton path={"/"}><Icon icon={home}/></LinkButton>
 				<Button onClick={() => this.onSideClicked(Side.DEFENDER)} label={"DEF"} side={Side.DEFENDER}/>
 			</Toolbar>
 			<OperatorCarousel ref={carousel => this.operatorCarousel = carousel}/>

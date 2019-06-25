@@ -5,6 +5,8 @@ import {Button, LinkButton} from "../controls/button";
 import {isOperatorActive} from "../../ops/roster";
 import {playlist, PLAYLIST_SKIP} from "../../util/generators";
 import {OperatorCarousel} from "../operator/carousel";
+import {Icon} from "../icon/icon";
+import home from "../../icons/home.svg";
 
 interface Props {
 	operators: Operator[];
@@ -68,7 +70,7 @@ export class Queue extends Component<Props> {
 		return <div>
 			<Toolbar>
 				<Button onClick={() => this.onSideClicked(Side.ATTACKER)} label={"ATK"} side={Side.ATTACKER}/>
-				<LinkButton path={"/"} label={"Home"}/>
+				<LinkButton path={"/"}><Icon icon={home}/></LinkButton>
 				<Button onClick={() => this.onSideClicked(Side.DEFENDER)} label={"DEF"} side={Side.DEFENDER}/>
 			</Toolbar>
 			<Toolbar>

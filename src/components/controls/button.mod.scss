@@ -44,6 +44,7 @@
 
 	div {
 		width: 32px;
+		margin-right: 0.5em;
 	}
 
 	svg {
@@ -52,5 +53,9 @@
 
 	&.icon_only {
 		flex: 0 0 52px;
+
+		div {
+			margin-right: 0;
+		}
 	}
 }

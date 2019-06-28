@@ -1,0 +1,12 @@
+.Home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	height: 100vh;
+	overflow: hidden;
+
+	> * {
+		margin: 5vmin 10vmin;
+	}
+}

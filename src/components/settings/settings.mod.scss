@@ -1,0 +1,64 @@
+@import "../../globals";
+
+.Settings {
+
+	a {
+		flex: 1 0 100% !important;
+	}
+
+	> div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: stretch;
+		justify-content: space-evenly;
+
+		> h2 {
+			text-transform: uppercase;
+			font-size: 2em;
+			flex: 0 0 100%;
+			letter-spacing: 0.1em;
+			text-align: center;
+			padding: 0.3em 0;
+
+			&.attacker {
+				background-color: $attacker;
+			}
+			&.defender {
+				background-color: $defender;
+			}
+		}
+
+		img {
+			width: 80px;
+		}
+
+		button {
+			background: none rgba(255, 255, 255, .0);
+			border: none;
+			border-radius: 8px;
+			transition: background-color 150ms linear;
+			-webkit-tap-highlight-color: transparent;
+			outline: none;
+
+			> * {
+				transform: scale(1);
+				filter: grayscale(0) brightness(1);
+
+				transition-property: transform, filter;
+				transition-duration: 150ms;
+				transition-timing-function: linear;
+			}
+
+			&.unchecked > * {
+				transform: scale(0.75);
+				filter: grayscale(1) brightness(0.75);
+			}
+
+			&:focus, &:active {
+				background-color: rgba(255, 255, 255, .24);
+			}
+		}
+	}
+
+}

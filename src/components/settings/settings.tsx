@@ -4,6 +4,10 @@ import {getOperatorRoster, setOperatorActive} from "../../ops/roster";
 import {Toggle} from "../controls/toggle";
 import style from "./settings.mod.scss"
 import {OperatorIcon} from "../operator/icon";
+import {Toolbar} from "../controls/toolbar";
+import {LinkButton} from "../controls/button";
+import {Icon} from "../icon/icon";
+import home from "../../icons/home.svg";
 
 type OperatorSelection = { op: Operator, active: boolean };
 
@@ -37,25 +41,32 @@ export class Settings extends Component<Props, State> {
 
 	render() {
 		let {roster} = this.state;
-		let side: { ops: OperatorSelection[], title: string; }[] = [];
+		let side: { ops: OperatorSelection[], title: string; cls: string}[] = [];
 		side.push({
 			title: "Attackers",
+			cls: style.attacker,
 			ops: roster.filter(({op}) => op.side === Side.ATTACKER)
 		});
 		side.push({
 			title: "Defenders",
+			cls: style.defender,
 			ops: roster.filter(({op}) => op.side === Side.DEFENDER)
 		});
 
-		return <div class={style.Settings}>{
-			side.map(({title, ops}) => <div>
-				<h2>{title}</h2>
-				{
-					ops.map(({op, active}) => <Toggle onCheckedChange={(checked) => this.onRosterChanged(op, checked)} checked={active} uncheckedClass={style.unchecked}>
-						<OperatorIcon op={op}/>
-					</Toggle>)
-				}
-			</div>)
-		}</div>;
+		return <div class={style.Settings}>
+			<Toolbar>
+				<LinkButton path={"/"}><Icon icon={home}/></LinkButton>
+			</Toolbar>
+			{
+				side.map(({title, ops, cls}) => <div>
+					<h2 class={cls}>{title}</h2>
+					{
+						ops.map(({op, active}) => <Toggle onCheckedChange={(checked) => this.onRosterChanged(op, checked)} checked={active} uncheckedClass={style.unchecked}>
+							<OperatorIcon op={op}/>
+						</Toggle>)
+					}
+				</div>)
+			}
+		</div>;
 	}
 }

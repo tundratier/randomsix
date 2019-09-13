@@ -4,7 +4,9 @@
   "description": "Random operator selection for Rainbow Six Siege (TM) by Ubisoft",
   "main": "src/index.tsx",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dist": "shx rm out/*; webpack -p",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,10 @@
 const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	entry: "./src/index.tsx",
 	output: {
-		filename: "bundle.js",
+		filename: "bundle.[hash].js",
 		path: path.resolve(__dirname, "out")
 	},
 	// Enable sourcemaps for debugging webpack's output.
@@ -43,4 +44,10 @@ module.exports = {
 			}
 		],
 	},
+	plugins: [
+		new HTMLWebpackPlugin({
+			filename: path.resolve(__dirname, "index.html"),
+			template: path.resolve(__dirname, "src", "index.ejs"),
+		})
+	]
 };

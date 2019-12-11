@@ -10,6 +10,7 @@ export function Home() {
 	return <nav class={style.Home}>
 		<LinkButton label={"Random"} path={"/random"}><Icon icon={random}/></LinkButton>
 		<LinkButton label={"Playlist"} path={"/queue"}><Icon icon={queue}/></LinkButton>
+		<LinkButton label={"MOTD"} path={"/motd"}><Icon icon={queue}/></LinkButton>
 		<LinkButton label={"Roster"} path={"/settings"}><Icon icon={roster}/></LinkButton>
 	</nav>
 }

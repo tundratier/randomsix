@@ -1,0 +1,14 @@
+.Motd {
+	display: flex;
+	flex-direction: column;
+	height: 90vh;
+
+	> div {
+		flex: 0 1 100%;
+		margin: 0 auto;
+	}
+
+	a {
+		flex: 1 0 100% !important;
+	}
+}

@@ -65,4 +65,5 @@ export const DEFENDERS: Array<Operator> = [
 	"Wamai",
 	"Oryx",
 	"Melusi",
+	"Aruni",
 ].map(name => new Operator(Side.DEFENDER, name, getIconPath(name)));

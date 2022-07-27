@@ -8,6 +8,7 @@ import style from "./app.mod.scss";
 import {Random} from "./components/random/random";
 import {Queue} from "./components/queue/queue";
 import {Home} from "./components/home/home";
+import {Motd} from "./components/motd/motd";
 
 export function App() {
 	const operators: Operator[] = ATTACKERS.concat(DEFENDERS);
@@ -17,6 +18,7 @@ export function App() {
 			<Home path={"/"}/>
 			<Random path="/random" operators={operators}/>
 			<Queue path="/queue" operators={operators}/>
+			<Motd path="/motd" operators={operators}/>
 			<Settings path="/settings" operators={operators}/>
 		</Router>
 	</div>;

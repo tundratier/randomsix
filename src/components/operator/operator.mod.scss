@@ -2,22 +2,23 @@
 
 .OperatorBadge {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-
-	img {
-		max-width: 100%;
-		max-height: 100%;
-	}
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-origin: content-box;
+	padding-bottom: 4.4vh;
 
 	span {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
 		text-transform: uppercase;
 		color: $text;
 		font-size: 4.4vh;
+		line-height: 4.4vh;
 		font-weight: 500;
 		letter-spacing: 0.08em;
 	}

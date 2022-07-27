@@ -14,6 +14,10 @@ function createValue(date: Date, operator: Operator): string {
 	return `${dateStamp(date)}_${operator.name}`;
 }
 
+export function resetOperators() {
+	[Side.ATTACKER, Side.DEFENDER].forEach(side => window.localStorage.removeItem(createKey(side)));
+}
+
 export function writeOperator(date: Date, operator: Operator) {
 	let key = createKey(operator.side);
 	let value = createValue(date, operator);

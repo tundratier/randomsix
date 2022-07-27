@@ -83,7 +83,7 @@ class CarouselItem extends Component<ItemProps, ItemState> {
 
 	render() {
 		return <div class={this.getClassName()} onTransitionEnd={this.onTransitionEnd.bind(this)}>
-			<OperatorBadge op={this.props.operator}/>
+			<OperatorBadge op={this.props.operator} showName={true}/>
 		</div>;
 	}
 }

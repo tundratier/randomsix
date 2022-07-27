@@ -42,9 +42,7 @@ export class Motd extends Component<Props> {
 			</Toolbar>
 			{
 				Array.from(this.motdMap.entries())
-					 .map(([side, operator]) => <div>
-						 <OperatorBadge op={operator}/>
-					 </div>)
+					 .map(([side, operator]) => <OperatorBadge op={operator} showName={true}/>)
 			}
 		</div>;
 	}

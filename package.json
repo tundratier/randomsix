@@ -1,6 +1,6 @@
 {
   "name": "randomsix",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Random operator selection for Rainbow Six Siege (TM) by Ubisoft",
   "main": "src/index.tsx",
   "scripts": {

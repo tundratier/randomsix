@@ -5,7 +5,7 @@
   "main": "src/index.tsx",
   "scripts": {
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && webpack",
-    "dist": "shx rm out/*; set NODE_OPTIONS=--openssl-legacy-provider && webpack -p",
+    "dist": "shx rm out/* && set NODE_OPTIONS=--openssl-legacy-provider && webpack -p",
     "watch": "set NODE_OPTIONS=--openssl-legacy-provider && webpack --watch"
   },
   "repository": {

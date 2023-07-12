@@ -38,6 +38,7 @@ export const ATTACKERS: Array<Operator> = [
 	"Osa",
 	"Sens",
 	"Grim",
+	"Brava",
 ].map(name => new Operator(Side.ATTACKER, name, getIconPath(name)));
 
 export const DEFENDERS: Array<Operator> = [
@@ -74,4 +75,5 @@ export const DEFENDERS: Array<Operator> = [
 	"Thorn",
 	"Azami",
 	"Solis",
+	"Fenrir",
 ].map(name => new Operator(Side.DEFENDER, name, getIconPath(name)));

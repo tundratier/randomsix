@@ -5,6 +5,7 @@ function getIconPath(name: string) {
 }
 
 export const ATTACKERS: Array<Operator> = [
+	"Striker",
 	"Sledge",
 	"Thatcher",
 	"Ash",
@@ -40,9 +41,11 @@ export const ATTACKERS: Array<Operator> = [
 	"Grim",
 	"Brava",
 	"Ram",
+	"Deimos",
 ].map(name => new Operator(Side.ATTACKER, name, getIconPath(name)));
 
 export const DEFENDERS: Array<Operator> = [
+	"Sentry",
 	"Smoke",
 	"Mute",
 	"Castle",

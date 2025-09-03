@@ -83,4 +83,5 @@ export const DEFENDERS: Array<Operator> = [
 	"Fenrir",
 	"Tubarao",
 	"Skopos",
+  "Denari",
 ].map(name => new Operator(Side.DEFENDER, name, getIconPath(name)));
